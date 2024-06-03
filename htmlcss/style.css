@@ -1,0 +1,15 @@
+.para-style{
+    background-color: rgb(196, 189, 203);
+    color: rgb(181, 7, 36);
+    font-size: 20px;    
+}
+#btn{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 5px 80px 5px 80px;
+    margin: 10px 0px 0px 5px;
+    
+
+}
