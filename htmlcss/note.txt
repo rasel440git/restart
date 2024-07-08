@@ -1,1 +1,2 @@
 codepen.io /for small design, button, menu etc
+v0.dev/ for custom desing like chatGPT
