@@ -50,12 +50,13 @@ function recursiveCall($number) {
 
 
 function factorialWithLoop($getNumber){
-   $factorial=1;
-   for( $i= 0; $i<= $factorial; $i++ ) {
-     echo $factorial= $factorial*$i;
+    $factorial=1;
+   for( $i= 1; $i<=$getNumber; $i++ ) {
+     $factorial *=$i;
 }
+ echo $factorial;
 }
-factorialWithLoop(5);
+echo factorialWithLoop(15);
 
 
 //array filter
