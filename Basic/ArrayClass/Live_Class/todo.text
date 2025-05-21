@@ -1,0 +1,47 @@
+What is array?
+-------------------------------------------
+*** Indexed Arrays
+*** How to loop over Indexed Arrays
+-------------------------------------------
+*** Associative arrays
+*** How to loop over Associative arrays
+-------------------------------------------
+*** Multidimensional indexed arrays
+*** How to loop over Multidimensional indexed arrays
+-------------------------------------------
+*** Multidimensional Associative arrays
+*** How to loop over Multidimensional Associative arrays
+
+
+
+--------------------------------------------
+Build in method in array
+   * array_values() - Returns all the values from the array.
+   * array_keys() - Returns all the keys from the array.
+   * array_key_exists() - Checks if a key exists in an array.
+   * array_search() - Searches the array for a given value and returns the first corresponding key.
+   * array_flip() - Exchanges all keys with their associated values in an array.
+---------------------------------------------
+
+Build in method in array
+   * count() - Counts the number of elements in an array.
+   * sizeof() - An alias of count(). Also counts the number of elements in an array.
+   * array_sum()- Computes the sum of values in an array.
+   * array_product() - Computes the product of values in an array.
+   * array_sum()- Computes the sum of values in an array.
+   * array_product() - Computes the product of values in an array.
+   * array_merge() - Merges one or more arrays.
+   * array_replace() - Replaces values from one array to another.
+   * sort() - Sorts an array in ascending order.
+   * rsort() - Sorts an array in descending order.
+   * array_unique() Removes duplicate values from an array.
+   * array_reverse() Returns an array with elements in reverse order.
+
+
+
+
+
+
+
+
+
