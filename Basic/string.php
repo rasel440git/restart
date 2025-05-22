@@ -10,4 +10,17 @@ $value3= ucwords($string    );
 
 // fixed artical
 
-$artical= "Hay whatss app? what are yoU doIng. is everything okeY"
+$artical= "Hay whatss app? what are yoU doIng. is everything okeY";
+//$result= strrev($artical  ) ;    
+// $result= strlen($artical);
+// echo $result;
+echo $result= str_repeat( $artical, 2 );
+
+
+echo str_shuffle($string);
+$reverse = '';
+for ($i = strlen($artical) - 1; $i >= 0; $i--) {
+    $reverse = $reverse . $artical[$i];
+}
+
+//echo $reverse;
