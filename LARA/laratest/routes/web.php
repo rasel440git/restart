@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\demoControler;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('firstRoute', [demoControler::class,'test1']);
+Route::post('/sndRoute', [demoControler::class,'test2']);
+Route::get("thrdRoute", [demoControler::class,'test3']);
+
+Route::get("/student/{name}/{roll}/{city}", [demoControler::class,'reqFunction']);
+Route::get("/input", [demoControler::class,'inputFunction']);
+Route::get("/header", [demoControler::class,'headerFunction']);
+

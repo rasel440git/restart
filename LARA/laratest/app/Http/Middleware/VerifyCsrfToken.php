@@ -11,7 +11,10 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array<int, string>
      */
-    protected $except = [
-        //
-    ];
+   protected $except = [
+    'sndRoute',       // no trailing slash
+    'sndRoute/*',     // if there are subpaths like sndRoute/submit
+];
+
 }
+
