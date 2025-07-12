@@ -22,7 +22,9 @@ Route::get('firstRoute', [demoControler::class,'test1']);
 Route::post('/sndRoute', [demoControler::class,'test2']);
 Route::get("thrdRoute", [demoControler::class,'test3']);
 
-Route::get("/student/{name}/{roll}/{city}", [demoControler::class,'reqFunction']);
-Route::get("/input", [demoControler::class,'inputFunction']);
-Route::get("/header", [demoControler::class,'headerFunction']);
+Route::get("student/{name}/{roll}/{city}", [demoControler::class,'reqFunction']);
+Route::get("input", [demoControler::class,'inputFunction']);
+Route::get("header/{id}", [demoControler::class,'headerFunction']);
+Route::get("invoice/{id}/item/{itemName}", [demoControler::class,'invoiceFunction']);
+Route::get("invoice/", [demoControler::class,'allInvoices']);
 
