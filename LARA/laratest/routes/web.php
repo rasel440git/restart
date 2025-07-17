@@ -26,5 +26,6 @@ Route::get("student/{name}/{roll}/{city}", [demoControler::class,'reqFunction'])
 Route::get("input", [demoControler::class,'inputFunction']);
 Route::get("header/{id}", [demoControler::class,'headerFunction']);
 Route::get("invoice/{id}/item/{itemName}", [demoControler::class,'invoiceFunction']);
-Route::get("invoice/", [demoControler::class,'allInvoices']);
+Route::get("invoices/", [demoControler::class,'allInvoices']);
+Route::get("countries/", [demoControler::class,'allCountries']);
 
