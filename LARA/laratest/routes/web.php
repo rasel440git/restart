@@ -27,5 +27,7 @@ Route::get("input", [demoControler::class,'inputFunction']);
 Route::get("header/{id}", [demoControler::class,'headerFunction']);
 Route::get("invoice/{id}/item/{itemName}", [demoControler::class,'invoiceFunction']);
 Route::get("invoices/", [demoControler::class,'allInvoices']);
-Route::get("countries/", [demoControler::class,'allCountries']);
+// Route::get("countries/", [demoControler::class,'allCountries']);
+Route::match(['get','post'],"countries/", [demoControler::class,'allCountries']);
+Route::match(['get','post'],"contact/", [demoControler::class,'contact']);
 

@@ -21,11 +21,19 @@ class demoControler extends Controller
     }
     public function reqFunction(Request  $request){
         {
-            $name= $request->name;
-            $roll= $request->roll;
-            $city= $request->city;
+            $name= $request->input('name');
+            $roll= $request->input('roll');
+            $city= $request->input('city');
+            $password= $request->header('pin');
+            $loction= $request->loction;
+            $bGroup= $request->bGroup;
 
-            return [$name,$roll,$city];
+
+            // return [$name,$roll,$city];
+
+            // return $request->input();
+            // return $request->header();
+            return [$name, $roll, $city, $password, $loction, $bGroup] ;
         }
     }
 
@@ -45,7 +53,7 @@ class demoControler extends Controller
 
     public function invoiceFunction(Request $request, $id, $itemName){
         $invoiceID= "Your invoice Id is ". $id."</br>";
-        $invoiceName= "Your invoice Name is " .$itemName;
+        $invoiceName= "Your item Name is " .$itemName;
           return response($invoiceID. $invoiceName);
         //return ("{$invoiceID} {$invoiceName}");
     }
@@ -56,7 +64,23 @@ class demoControler extends Controller
         return  response($inputId );
     }
 
-    public function allCountries(){
-        return view("countries");
+    public function allCountries(Request $request){
+        $page= $request->input('page',1);
+        $perPage= $request->input('perpage',1);
+        $output= "Your page number is ".$page." and showing total " .$perPage." pages";
+        return response($output);
+        // return view("countries");
+    }
+
+    public function contact(Request $request){
+            if($request->isMethod('post')){
+                $data=[];
+                $data['email']= $request->input('email');
+                $data['phone']= $request->input('phone');
+                $data['message']= $request->input('message');
+                return response()->json($data);
+
+            }
+        return view('contact');
     }
 }
