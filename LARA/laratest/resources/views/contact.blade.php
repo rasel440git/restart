@@ -17,7 +17,8 @@
         <input type="text" name="email" placeholder="Enter Your Email">
         <input type="text" name="phone" placeholder="Enter Your Phone">
         <textarea name="message" ></textarea>
-        <button>Submit</button>
+        <input type="file" name="photo">
+        <button type="submit">Submit</button>
     </form>
     
 </body>

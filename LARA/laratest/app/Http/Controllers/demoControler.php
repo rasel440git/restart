@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class demoControler extends Controller
 {
+
+    public function imageUpload(){
+
+    }
     public function test1(){
         return redirect('/thrdRoute');
     }
@@ -70,17 +74,41 @@ class demoControler extends Controller
         $output= "Your page number is ".$page." and showing total " .$perPage." pages";
         return response($output);
         // return view("countries");
+
+
+        
     }
 
-    public function contact(Request $request){
-            if($request->isMethod('post')){
-                $data=[];
-                $data['email']= $request->input('email');
-                $data['phone']= $request->input('phone');
-                $data['message']= $request->input('message');
-                return response()->json($data);
+    public function contact(Request $request): bool{
+        //     if($request->isMethod('post')){
+        //         $data=[];
+        //         $data['email']= $request->input('email');
+        //         $data['phone']= $request->input('phone');
+        //         $data['message']= $request->input('message');
+        //         return response()->json($data);
 
+        //     }
+        // return view('contact');
+
+    //    if ($request->hasFile('photo')) {
+    // $photoReq = $request->file('photo');
+    // $photoReq->storeAs('upload', $photoReq->getClientOriginalName());
+    // } else {
+        
+    // }
+
+    }
+
+    public function upload(Request $request)    {
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photo->storeAs('upload', $photo->getClientOriginalName());
+            $photo->move(public_path(upload, $photo->getClientOriginalName());
+            return "File uploaded!";
+            } else {
+                return "No file uploaded.";
             }
-        return view('contact');
     }
+
 }
