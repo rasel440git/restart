@@ -79,22 +79,23 @@ class demoControler extends Controller
         
     }
 
-    public function contact(Request $request): bool{
-        //     if($request->isMethod('post')){
-        //         $data=[];
-        //         $data['email']= $request->input('email');
-        //         $data['phone']= $request->input('phone');
-        //         $data['message']= $request->input('message');
-        //         return response()->json($data);
-
-        //     }
-        // return view('contact');
+    public function contact(Request $request) {
+            if($request->isMethod('post')){
+                $data=[];
+                $data['email']= $request->input('email');
+                $data['phone']= $request->input('phone');
+                $data['message']= $request->input('message');
+                $data['photo']= $request->input('photo');
+                //return response()->json('$data');
+                dd($data);
+            }
+         return view('contact');
 
     //    if ($request->hasFile('photo')) {
     // $photoReq = $request->file('photo');
     // $photoReq->storeAs('upload', $photoReq->getClientOriginalName());
     // } else {
-        
+    //     return "Flase"
     // }
 
     }
@@ -104,7 +105,7 @@ class demoControler extends Controller
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             $photo->storeAs('upload', $photo->getClientOriginalName());
-            $photo->move(public_path(upload, $photo->getClientOriginalName());
+            $photo->move(public_path(upload, $photo->getClientOriginalName()));
             return "File uploaded!";
             } else {
                 return "No file uploaded.";
