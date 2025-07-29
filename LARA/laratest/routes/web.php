@@ -30,5 +30,5 @@ Route::get("invoices/", [demoControler::class,'allInvoices']);
 // Route::get("countries/", [demoControler::class,'allCountries']);
 Route::match(['get','post'],"countries/", [demoControler::class,'allCountries']);
 Route::match(['get','post'],"contact/", [demoControler::class,'contact']);
-Route::match(['get','post'],"upload/", [demoControler::class,'upload']);
+Route::match(['get','post'],"upload/", [demoControler::class,'fileUpload']);
 

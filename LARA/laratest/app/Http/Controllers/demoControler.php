@@ -100,16 +100,18 @@ class demoControler extends Controller
 
     }
 
-    public function upload(Request $request)    {
+    public function fileUpload(Request $request)  {
 
-        if ($request->hasFile('photo')) {
+        // if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             $photo->storeAs('upload', $photo->getClientOriginalName());
-            $photo->move(public_path(upload, $photo->getClientOriginalName()));
-            return "File uploaded!";
-            } else {
-                return "No file uploaded.";
-            }
-    }
+            $photo->move(public_path('upload'), $photo->getClientOriginalName());
+    //         return "File uploaded!";
+    //         } else {
+    //             return "No file uploaded.";
+    //         }
+
+    return true; 
+     }
 
 }
