@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Whoops\Handler\JsonResponseHandler;
 
 class demoControler extends Controller
 {
@@ -113,5 +115,38 @@ class demoControler extends Controller
 
     return true; 
      }
+
+     public function cookeReq(Request $request){
+        // return $request-> cookie('Cookie_2');
+
+        $name="Token";
+        $value= "this is value";
+        $minutes= 60;
+        $path="/";
+        $domain= $_SERVER['SERVER_NAME'];
+        $secure= false;
+        $httpOnly=true;
+        return response('Hi')-> cookie($name, $value,$minutes,$path,$domain,$secure, $httpOnly);
+
+
+     }
+
+     public function jResp(Request $request): JsonResponse{
+        $code=200;
+        $content= array('name'=>'Jack','city'=>'Dhaka');
+
+        return response()->json($content,$code);
+     }
+
+     public function fileBinary(){
+        $filePath= "upload/testImg.jpg";
+        return response()->file($filePath);
+     }
+
+     public function fileDownload(){
+        $filePath= "upload/testImg.jpg";
+        return response()->download($filePath);
+     }
+
 
 }

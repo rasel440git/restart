@@ -31,4 +31,8 @@ Route::get("invoices/", [demoControler::class,'allInvoices']);
 Route::match(['get','post'],"countries/", [demoControler::class,'allCountries']);
 Route::match(['get','post'],"contact/", [demoControler::class,'contact']);
 Route::match(['get','post'],"upload/", [demoControler::class,'fileUpload']);
+Route::match(['get','post'],"cook/", [demoControler::class,'cookeReq']);
+Route::match(['get','post'],"jreq/", [demoControler::class,'jResp']);
+Route::match(['get','post'],"fileBinary/", [demoControler::class,'fileBinary']);
+Route::match(['get','post'],"fileDownload/", [demoControler::class,'fileDownload']);
 

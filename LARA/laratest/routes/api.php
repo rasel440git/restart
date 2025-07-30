@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("student/{loction}/{bGroup}", [demoControler::class,'reqFunction']);
 Route::post("student/", [demoControler::class,'reqFunction']);
 Route::post("upload/", [demoControler::class,'fileUpload']);
+Route::match(['get','post'],"cook/", [demoControler::class,'cookeReq']);
 
