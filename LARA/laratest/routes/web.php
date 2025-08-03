@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\demoControler;
+use App\Http\Controllers\siteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +36,14 @@ Route::match(['get','post'],"cook/", [demoControler::class,'cookeReq']);
 Route::match(['get','post'],"jreq/", [demoControler::class,'jResp']);
 Route::match(['get','post'],"fileBinary/", [demoControler::class,'fileBinary']);
 Route::match(['get','post'],"fileDownload/", [demoControler::class,'fileDownload']);
+
+
+Route::get("home/", [siteController::class,'homePage']);
+Route::get("about/", [siteController::class,'aboutPage']);
+Route::get("courses/", [siteController::class,'coursesPage']);
+Route::get("signin/", [siteController::class,'signinPage']);
+Route::get("signup/", [siteController::class,'signupPage']);
+Route::get("header/", [siteController::class,'layputHeaderPage']);
+Route::get("footer/", [siteController::class,'layoutFooterPage']);
+Route::get("invoices/", [siteController::class,'allInvoices']);
 
