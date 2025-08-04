@@ -8,14 +8,19 @@ class siteController extends Controller
 {
     public function homePage(){
 
-        $student=['Name'=>'Rasel',
-                   'Address'=>'Dhaka',
-                    'Phone'=>'00892839432'];
-        return view('page.home',['studentData'=>$student]);
+        // $student=['Name'=>'Rasel',
+        //            'Address'=>'Dhaka',
+        //             'Phone'=>'00892839432'];
+        return view('page.home');
     }
 
     public function aboutPage(){
         return view('page.about');
+    }
+
+    public function contactPage()  {
+        return view('page.contact');
+        
     }
     public function coursesPage(){
         return view('page.courses');

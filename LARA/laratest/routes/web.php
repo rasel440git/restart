@@ -45,5 +45,5 @@ Route::get("signin/", [siteController::class,'signinPage']);
 Route::get("signup/", [siteController::class,'signupPage']);
 Route::get("header/", [siteController::class,'layputHeaderPage']);
 Route::get("footer/", [siteController::class,'layoutFooterPage']);
-Route::get("invoices/", [siteController::class,'allInvoices']);
+Route::get("contact/", [siteController::class,'contactPage']);
 
