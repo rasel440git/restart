@@ -38,12 +38,15 @@ Route::match(['get','post'],"fileBinary/", [demoControler::class,'fileBinary']);
 Route::match(['get','post'],"fileDownload/", [demoControler::class,'fileDownload']);
 
 
-Route::get("home/", [siteController::class,'homePage']);
-Route::get("about/", [siteController::class,'aboutPage']);
-Route::get("courses/", [siteController::class,'coursesPage']);
+Route::get("home/", [siteController::class,'homePage'])->name('home');
+Route::get("about/", [siteController::class,'aboutPage'])->name('about');
+Route::get("courses/", [siteController::class,'coursesPage'])->name('courses');
 Route::get("signin/", [siteController::class,'signinPage']);
 Route::get("signup/", [siteController::class,'signupPage']);
 Route::get("header/", [siteController::class,'layputHeaderPage']);
 Route::get("footer/", [siteController::class,'layoutFooterPage']);
-Route::get("contact/", [siteController::class,'contactPage']);
+Route::get("contact/", [siteController::class,'contactPage'])->name('contact');
 
+Route::get('main/', function () {
+    return view(view: 'layout.main');
+});
