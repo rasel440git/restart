@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\demoControler;
 use App\Http\Controllers\siteController;
+use App\Http\Middleware\TestMiddleware;
+
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +36,7 @@ Route::match(['get','post'],"countries/", [demoControler::class,'allCountries'])
 Route::match(['get','post'],"contact/", [demoControler::class,'contact']);
 Route::match(['get','post'],"upload/", [demoControler::class,'fileUpload']);
 Route::match(['get','post'],"cook/", [demoControler::class,'cookeReq']);
-Route::match(['get','post'],"jreq/", [demoControler::class,'jResp']);
+Route::match(['get','post'],"jreq/", [demoControler::class,'jResp'])->Middleware([TestMiddleware::class]);
 Route::match(['get','post'],"fileBinary/", [demoControler::class,'fileBinary']);
 Route::match(['get','post'],"fileDownload/", [demoControler::class,'fileDownload']);
 
