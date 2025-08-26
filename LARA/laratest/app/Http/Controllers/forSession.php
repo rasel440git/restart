@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 class forSession extends Controller
 {
     public function setSession(Request $request){
-        session()->put('Jone Doe');
+        session()->put('name','Jone Doe');
         $request->session()->put('email','john@mail.com');
         session(['phone','01212122']);
 
-            return response("session data have been saved");
+            return response("session data have been Sets");
     }
 
     public function getSession(Request $request){
-        
+        $all= session()->get('name');
+        return response(content: $all);
     }
 }

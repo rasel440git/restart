@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\demoControler;
+use App\Http\Controllers\forSession;
 use App\Http\Controllers\siteController;
 use App\Http\Middleware\TestMiddleware;
 
@@ -53,3 +54,7 @@ Route::get("contact/", [siteController::class,'contactPage'])->name('contact');
 Route::get('main/', function () {
     return view(view: 'layout.main');
 });
+
+
+Route::get("setsession/", [forSession::class,'setSession'])->name('setses');
+Route::get("getsession/", [forSession::class,'getSession']);
