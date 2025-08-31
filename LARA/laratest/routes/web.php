@@ -6,6 +6,7 @@ use App\Http\Controllers\siteController;
 use App\Http\Middleware\TestMiddleware;
 
 use GuzzleHttp\Middleware;
+use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,3 +59,4 @@ Route::get('main/', function () {
 
 Route::get("setsession/", [forSession::class,'setSession'])->name('setses');
 Route::get("getsession/", [forSession::class,'getSession']);
+Route::get("getdata/", [forSession::class,'testApi'])->middleware('throttle:1,3');

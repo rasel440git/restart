@@ -18,4 +18,9 @@ class forSession extends Controller
         $all= session()->get('name');
         return response(content: $all);
     }
+
+    public function testApi(Request $request){
+        $countries=['BD','India','Nepal','Bhutan'];
+        return response()->json($countries);
+    }
 }
