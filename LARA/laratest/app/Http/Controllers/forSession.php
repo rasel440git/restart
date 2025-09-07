@@ -21,6 +21,7 @@ class forSession extends Controller
 
     public function testApi(Request $request){
         $countries=['BD','India','Nepal','Bhutan'];
+        log::info( $countries);
         return response()->json($countries);
     }
 }
