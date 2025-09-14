@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('firstRoute', [demoControler::class,'test1']);
 Route::post('/sndRoute', [demoControler::class,'test2']);
