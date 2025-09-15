@@ -7,10 +7,10 @@
 </head>
 <body>
     <div>
-    Sent Event: <livewire:sent-event/>
+    <livewire:bird-form/>
     </div>
     <div>
-    Recived Event: <livewire:receive-event/>
+    <!-- Recived Event: <livewire:receive-event/> -->
     </div>
 </body>
 </html>
