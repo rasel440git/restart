@@ -10,14 +10,17 @@
         </div>
         <button>Add New Bird</button>
     </form>
-        <div>
-            @foreach ($allData as $data )
-            <div>
+        @foreach ($allData as $data )
+        <div wire:key='{{ $data->id }}' wire:transition>
+            
+            <div >
                 {{ $data->bird_count }}
             </div>
             <div>
                  {{ $data->notes }}
             </div>
-            @endforeach
+            <button wire:click="delete({{ $data->id }})">Delete</button>
+           
         </div>
+         @endforeach
 </div>
