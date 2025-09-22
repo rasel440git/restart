@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-    <livewire:photo-upload/>    
+    <livewire:user-search>    
     <!-- <livewire:bird-form/> -->
     </div>
     <div>
