@@ -67,8 +67,12 @@
             </tr>
 
             @endforeach
-
-            {{}}
+            <div>
+            Counter:{{$counter}}
+            <button wire:click="counterInc" class ="btn btn-primary btn-sm">+</button>
+            <button wire:click="counterDec" class=" btn btn-danger btn-sm">-</button>
+            </div>
+            
         </tbody>
 
     </table>

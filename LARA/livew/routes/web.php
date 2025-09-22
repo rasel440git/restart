@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Livewire\BirdForm;
 use App\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ Route::get('/', function () {
 
 Route::get('/counter', Counter::class);
 Route::get('/bird', BirdForm::class);
+Route::get("success", [HomeController::class, 'redirectSuccess']);//->name('success');
+

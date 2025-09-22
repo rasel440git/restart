@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Laravel Livewire CRUD - ItSolutionStuff.com</title>
+    <title>Laravel Livewire CRUD</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 
@@ -24,7 +24,7 @@
 
                     <div class="card-header">
 
-                        <h2>Laravel Livewire CRUD - ItSolutionStuff.com</h2>
+                        <h2>Laravel Livewire CRUD</h2>
 
                     </div>
 

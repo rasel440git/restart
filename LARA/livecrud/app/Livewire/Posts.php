@@ -119,4 +119,13 @@ class Posts extends Component
         session()->flash('message', 'Post Deleted Successfully.');
 
     }
+    public $counter=0;
+    public function counterInc(){
+        $this->counter++;
+    }
+
+    public function counterDec(){
+        $this->counter--;
+    }
+
 }

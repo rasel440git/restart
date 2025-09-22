@@ -23,7 +23,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    /**
+    /**User::factory()->count(20)->create();
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
