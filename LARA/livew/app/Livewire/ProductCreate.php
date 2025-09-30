@@ -7,9 +7,10 @@ use Livewire\Component;
 
 class ProductCreate extends Component
 {
-    public $category, $name, $price, $status, $venders=[], $details;
+    public $category, $name, $price, $status, $venders=[], $details, $products;
     public function render()
     {
+        $this->products = Product::all();
         return view('livewire.product-create');
     }
 

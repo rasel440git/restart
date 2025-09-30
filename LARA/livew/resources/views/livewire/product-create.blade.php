@@ -58,4 +58,34 @@
          </div>
          <div wire:dirty>Unsaved input...</div>
    </form>
+
+
+   <table class="table table-bordered mt-5">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Vendor</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+             @foreach($products as $product)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $product->category }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->price }}</td>
+                <td>{{ $product->status }}</td>
+                <td>{{ implode(', ', $product->vendor) }}</td>
+                <td>{{ $product->details }}</td>      
+                <td>
+                    <button class="btn btn-sm btn-primary" wire:click="edit({{ $product->id }})">Edit</button>
+                    <button class="btn btn-sm btn-danger" wire:click="delete({{ $product->id }})" wire:confirm="Are you sure you want to delete this user?">Delete</button>
+                </td>
+            </tr>
+            @endforeach
 </div>

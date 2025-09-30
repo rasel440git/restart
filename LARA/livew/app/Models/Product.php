@@ -11,6 +11,11 @@ class Product extends Model
     protected $fillable = [
         'name',
         'price',   
-        'details'     
-    ];
+        'details',
+        'category',      
+        'status',      
+        'vendor' => 'array'
+        ];
+    
 }
+

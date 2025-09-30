@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-    <livewire:user-search>    
+    <livewire:product-create>    
     <!-- <livewire:bird-form/> -->
     </div>
     <div>
