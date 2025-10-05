@@ -8,7 +8,7 @@ use App\Models\User;
 
 class CreateUser extends Component
 {
-    public  $name, $email;
+    public  $insertName, $insertEmail;
     public function render()
     {
         return view('livewire.user-search');
@@ -16,12 +16,12 @@ class CreateUser extends Component
 
     public function submit(){
         $this->validate([
-            "name"=>"required",
-            "email"=>"required|email"
+            "insertName"=>"required",
+            "insertEmail"=>"required|email"
         ]);
         $user = User::create([
-            "name"=>$this->name,
-            "email"=>$this->email,
+            "name"=>$this->insertName,
+            "email"=>$this->insertEmail
         ]);
         session()->flash('message', 'User created successfully.');
 

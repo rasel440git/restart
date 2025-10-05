@@ -31,8 +31,8 @@
 
         <div>
             <label>Status</label><br>
-            <label><input type="radio" wire:model="status" value="active"> Active</label>
-            <label><input type="radio" wire:model="status" value="inactive"> Inactive</label>
+            <label><input type="radio" name="status" wire:model="status" value="active"> Active</label>
+            <label><input type="radio" name="status" wire:model="status" value="inactive"> Inactive</label>
             @error("status")
             <span class="text-danger">{{ $message }}</span>
             @enderror
@@ -63,8 +63,9 @@
 
         <div wire:dirty>Unsaved input...</div>
     </form>
+ 
 
-
+    <div>
 
    <table class="table table-bordered mt-5">
         <thead>
@@ -95,4 +96,8 @@
                 </td>
             </tr>
             @endforeach
+        </tbody>
+    </table>
+    </div>
+    
 </div>

@@ -8,11 +8,11 @@ use Livewire\Component;
 
 class ProductCreate extends Component
 {
-    public $category, $name, $price, $status, $venders=[], $details, $products;
+    public $category_id, $name, $price, $status, $venders=[], $details, $products;
     public $categories=[];
 
-    public function loadCategory(){
-        $this->categories = Product::pluck('category','id')->all();      
+    public function loadCategory(): void{
+        $this->categories = Product::select('id','category')->distinct()->pluck('category','id')->toArray();      
         // dd($this->categories);      
        
     }
@@ -24,26 +24,32 @@ class ProductCreate extends Component
 
     public function submit(){
         $this->validate([
-            "name"=>"required",
-            "price"=>"required",
-            "status"=>"required"
+            'category_id' => 'required',
+            'name' => 'required|string',
+            'price' => 'required|numeric',
+            'status' => 'required',
+            'details' => 'nullable|string',
         ]);
 
         $product= Product::create([
-            'category'=>$this->category,
-            'name'=>$this->name,
-            'price'=>$this->price,
-            'status'=>$this->status,
-            'vendor'=>$this->venders,
-            'details'=>$this->details
+            'category_id' => $this->category_id,
+            'name' => $this->name,
+            'price' => $this->price,
+            'status' => $this->status,
+            'venders' => json_encode($this->venders),
+            'details' => $this->details,
         ]);
          sleep(3);
-        info($this->category);
+        info($this->category_id);
         info($this->name);
         info($this->price);
         info($this->status);
         info($this->venders);
         info($this->details);
+
+         session()->flash('success', 'Product added successfully!');
+            $this->resetForm();
+
     }
 
     public function resetForm(){
@@ -52,6 +58,6 @@ class ProductCreate extends Component
         $this->price=null;
         $this->details=null;
         $this->venders=null;
-        $this->category=null;
+        $this->category_id=null;
     }
 }

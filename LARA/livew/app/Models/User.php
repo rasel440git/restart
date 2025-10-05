@@ -18,9 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'insertName',
+        'insertEmail',
     ];
 
     /**User::factory()->count(20)->create();
