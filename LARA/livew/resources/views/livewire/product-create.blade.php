@@ -83,17 +83,14 @@
         <tbody>
              @foreach($products as $product)
             <tr>
-                <td>{{ $loop->iteration }}</td>
+                <td>{{ $product->id }}</td>
                 <td>{{ $product->category }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->status }}</td>
                 <td>{{ $product->vendor }}</td>
-                <td>{{ $product->details }}</td>      
-                <td>
-                    <button class="btn btn-sm btn-primary" wire:click="edit({{ $product->id }})">Edit</button>
-                    <button class="btn btn-sm btn-danger" wire:click="delete({{ $product->id }})" wire:confirm="Are you sure you want to delete this user?">Delete</button>
-                </td>
+                <td>{{ $product->details }}</td>
+                <td><button class="btn btn-danger sm"> Delete</button></td>
             </tr>
             @endforeach
         </tbody>

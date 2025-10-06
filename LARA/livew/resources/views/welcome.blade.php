@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-    <livewire:product-create>    
+    <livewire:product-create lazy>    
     <!-- <livewire:bird-form/> -->
     </div>
     <div>

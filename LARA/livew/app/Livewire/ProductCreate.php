@@ -18,6 +18,7 @@ class ProductCreate extends Component
     }
     public function render()
     {
+        sleep(3);
         $this->products = Product::all();
         return view('livewire.product-create');
     }
