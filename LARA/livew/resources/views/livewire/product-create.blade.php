@@ -90,7 +90,7 @@
                 <td>{{ $product->status }}</td>
                 <td>{{ $product->vendor }}</td>
                 <td>{{ $product->details }}</td>
-                <td><button class="btn btn-danger sm"> Delete</button></td>
+                <td><button class="btn btn-danger sm" wire:click="productDelete({{ $product->id }})"> Delete</button></td>
             </tr>
             @endforeach
         </tbody>
@@ -98,3 +98,22 @@
     </div>
     
 </div>
+@script
+<script>
+    $wire.on('confirm', (event) => {
+       Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+               $wire.dispatch('delete', {id: event.id});
+            }
+            });
+    });
+</script>
+@endscript

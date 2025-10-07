@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Product;
 // use App\Models\Category;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class ProductCreate extends Component
 {
@@ -18,7 +19,7 @@ class ProductCreate extends Component
     }
     public function render()
     {
-        sleep(3);
+        sleep(1);
         $this->products = Product::all();
         return view('livewire.product-create');
     }
@@ -60,5 +61,17 @@ class ProductCreate extends Component
         $this->details=null;
         $this->venders=null;
         $this->category_id=null;
+    }
+
+    public function productDelete($id  ){
+        info($id);
+        $this->dispatch("confirm", id: $id);    
+        
+    }
+
+    #[On('delete')]
+    public function delete($id){
+        Product::find($id)->delete();
+        // info($id);
     }
 }
