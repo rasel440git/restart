@@ -28,10 +28,29 @@
     //     i++;
     // }
 
-    do{
-        document.write(i+" <button>Submit</button><br/>");
-        i++;
-    }while(i<15);
+    // do{
+    //     document.write(i+" <button>Submit</button><br/>");
+    //     i++;
+    // }while(i<15);
+
+
+
+    var fruits=["apple","banana","grapes","mango","orange"];
+    // for(var j=0;j<fruits.length;j++){
+    //     document.write(fruits[j]+"<br/>");
+    // }
+    var person={
+        name:"John",
+        age:30,
+        city:"New York"
+    };
+
+    for(var item of fruits){
+        document.write(item+"<br/>");
+    }
+    for(var item in person){
+        document.write(person[item]+"<br/>");
+    }
 
   </script>
 </body>
