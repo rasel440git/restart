@@ -5,18 +5,43 @@
   <title>Test Document</title>
 </head>
 <body>
+    <button onclick="objAlert()">Click me</button>
+
   <script>
     function add(a,b){
       
         let sum= a+b;
         document.write(sum+"<br/>");
     }
-    // document.write(add(5,6)+"<br/>");
+    document.write(add(5,6)+"<br/>");
 
 
     add(5,9);
     add(5,39);
     add(5,93);
+
+
+    function objAlert(){
+      let obj={name:"John", age:30, city:"New York"};
+      alert(obj.city);
+      confirm("Are you sure?");
+      let result = prompt("Enter your name:");
+    document.write(result)+"<br/>";
+    open();
+
+    }
+    setTimeout(function() {
+      // document.write("Hello World after 3 seconds<br/>");
+    }, 3000);
+
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      document.write("Latitude: " + position.coords.latitude + "<br/>");
+      document.write("Longitude: " + position.coords.longitude + "<br/>");
+      document.write("Speed: " + position.coords.speed + "<br/>");
+      document.write("Altitude: " + position.coords.altitude + "<br/>");
+    });
+
   </script>
 </body>
 </html>
