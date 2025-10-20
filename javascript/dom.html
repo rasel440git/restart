@@ -16,6 +16,19 @@
   <!-- <button onclick="myobj()">Click Me</button> -->
 
 
+
+<img 
+ id="myImg"
+ src="https://www.w3schools.com/js/pic_mountain.jpg"
+ alt="Mountain View"
+ width="300" height="200"
+>  
+
+<button onclick="changeImg()">Change Image</button>
+
+ 
+
+
   <ul id="myList">
     
   </ul>
@@ -23,6 +36,17 @@
   <button  onclick="addItem()">Add Item</button>
 
   <script>
+
+function changeImg() {
+    let imgElement = document.getElementById('myImg');
+    imgElement.src = "https://www.w3schools.com/js/pic_mountain.jpg";
+    imgElement.alt = "Mountain View";
+    imgElement.width = 400;
+    imgElement.height = 300;
+}
+
+
+
 
     function addItem() {
     let newItemInput = document.getElementById('newItemInput').value;
