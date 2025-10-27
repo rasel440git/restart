@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Document</title>
+</head>
+<body>
+ 
+</body>
+    <script>
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        console.log("Full Name: " + person.fullName());
+        console.log(person.firstName);
+
+
+        let car = new Object();
+        car.model = "Toyota";
+        car.year = 2020;
+        car.color = "Red";
+        car.getDetails = function() {
+            return this.year + " " + this.color + " " + this.model;
+        };
+
+        console.log("Car Details: " + car.getDetails());
+    </script>
+</html>
