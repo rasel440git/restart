@@ -8,16 +8,19 @@
  
 </body>
     <script>
-        let person = {
-            firstName: "John",
-            lastName: "Doe",
-            age: 30,
-            fullName: function() {
-                return this.firstName + " " + this.lastName;
-            }
-        };
-        console.log("Full Name: " + person.fullName());
-        console.log(person.firstName);
+        // let person = {
+        //     firstName: "John",
+        //     lastName: "Doe",
+        //     age: 30,
+        //     fullName: function() {
+        //         return this.firstName + " " + this.lastName;
+        //     }
+        // };
+        // console.log("Full Name: " + person.fullName());
+        // console.log(person.firstName);
+
+
+
 
 
         let car = new Object();
@@ -29,5 +32,22 @@
         };
 
         console.log("Car Details: " + car.getDetails());
+
+
+
+
+
+        function person(){
+            this.firstName = "Jane";
+            this.lastName = "Smith";
+            this.age = 25;
+            this.fullName = function() {
+                return this.firstName + " " + this.lastName;
+            };
+        }
+
+        let jane = new person();
+        console.log( jane);
+        // console.log("Constructor Full Name: " + jane.fullName());
     </script>
 </html>
