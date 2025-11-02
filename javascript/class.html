@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Document</title>
+</head>
+<body>
+ 
+</body>
+    <script>
+        
+        class Person {
+            
+                firstName = 'AB'
+                lastName = 'Rasel'
+                age = '14'
+            
+
+            fullName() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        // let john = new Person("John", "Doe", 30);
+        let pobj = new Person();
+        // console.log("Class Full Name: " + john.fullName());
+        console.log( pobj);
+
+
+        class Addition {
+            constructor(a, b) {
+                this.num1 = a;
+                this.num2 = b;
+            }
+
+            sum() {
+                return this.num1 + this.num2;
+            }
+        }
+        let addObj = new Addition(33, 10);
+        console.log("Sum: " + addObj.sum());
+
+//setter and getter
+
+        class product {
+            set Setprice(p) {
+                this.price = p;
+            }
+            get Getprice() {
+                return this.price;
+            }
+        }
+        let prodObj = new product();
+        prodObj.Setprice = 500;
+        console.log("Product Price: " + prodObj.Getprice);
+    </script>
+</html>
