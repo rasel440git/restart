@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Document</title>
+</head>
+<body>
+ 
+</body>
+    <script>
+        
+      function CreateCounter() {
+          let count = 0;
+
+          return {
+              inc: function() {
+                  count++;
+              },
+              decrement: function() {
+                  count--;
+              },
+              getCount: function() {
+                  return count;
+              }
+          };
+      }
+
+        let counter = CreateCounter();
+        counter.inc();
+        counter.inc();
+        counter.inc();
+        counter.inc();
+        counter.inc();
+        counter.inc();
+        counter.decrement();
+        console.log("Current Count: " + counter.getCount());    
+    </script>
+</html>
