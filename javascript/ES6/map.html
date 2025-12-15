@@ -1,0 +1,31 @@
+
+
+<script>
+    let myMap = new Map();
+
+    // Setting values in the Map
+    myMap.set('name', 'Alice');
+    myMap.set('age', 30);
+    myMap.set('city', 'New York');
+    myMap.set('Country', 'USA');
+
+    // Getting values from the Map
+    // console.log('Name:', myMap.get('name'));
+    // console.log('Age:', myMap.get('age'));
+    // console.log('City:', myMap.get('city'));
+
+    // Checking the size of the Map
+    console.log('Size of map:', myMap.size);
+
+    // Iterating over the Map
+    for (let [key, value] of myMap) {
+        console.log(`${key}: ${value}`);
+    }
+
+    // // Deleting a key-value pair
+    // myMap.delete('age');
+    // console.log('After deleting age, size of map:', myMap.size);
+
+    // // Checking if a key exists
+    // console.log('Has city?', myMap.has('city'));
+</script>
