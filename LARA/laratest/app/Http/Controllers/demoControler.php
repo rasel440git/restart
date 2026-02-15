@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;            
 use Whoops\Handler\JsonResponseHandler;
+use Illuminate\Support\Facades\Log;
 
 class demoControler extends Controller
 {
@@ -71,11 +72,9 @@ class demoControler extends Controller
     }
 
     public function allCountries(Request $request){
-        $page= $request->input('page',1);
-        $perPage= $request->input('perpage',1);
-        $output= "Your page number is ".$page." and showing total " .$perPage." pages";
-        return response($output);
-        // return view("countries");
+       $countries=['BD','India','Nepal','Bhutan'];
+        log::info( $countries);
+        return response()->json($countries);
 
 
         

@@ -57,6 +57,7 @@ Route::get('main/', function () {
 });
 
 
-Route::get("setsession/", [forSession::class,'setSession'])->name('setses');
+Route::get("setsession/{email}", [forSession::class,'setSession'])->name('setses');
 Route::get("getsession/", [forSession::class,'getSession']);
+Route::get("sessonFlash/", [forSession::class,'sessonFlash']);
 Route::get("getdata/", [forSession::class,'testApi'])->middleware('throttle:1,3');
