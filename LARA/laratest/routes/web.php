@@ -3,6 +3,7 @@
 use App\Http\Controllers\demoControler;
 use App\Http\Controllers\forSession;
 use App\Http\Controllers\siteController;
+use App\Http\Middleware\DemoMiddleware;
 use App\Http\Middleware\TestMiddleware;
 
 use GuzzleHttp\Middleware;
@@ -60,4 +61,14 @@ Route::get('main/', function () {
 Route::get("setsession/{email}", [forSession::class,'setSession'])->name('setses');
 Route::get("getsession/", [forSession::class,'getSession']);
 Route::get("sessonFlash/", [forSession::class,'sessonFlash']);
-Route::get("getdata/", [forSession::class,'testApi'])->middleware('throttle:1,3');
+
+route::middleware(['demo'])->group(function (){
+Route::get("hi/{key}", [demoControler::class,'middCheck']);
+Route::get("hi3/{key}", [demoControler::class,'middCheck3']);
+Route::get("hi4/{key}", [demoControler::class,'middCheck4']);
+});
+
+Route::get("hi2/", [demoControler::class,'middCheck2']);
+
+
+Route::get("getdata/", [forSession::class,'getdata'])->middleware('throttle:5,1');

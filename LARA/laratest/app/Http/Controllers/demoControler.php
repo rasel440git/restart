@@ -147,5 +147,21 @@ class demoControler extends Controller
         return response()->download($filePath);
      }
 
+     public function middCheck(){
+        return 'Hello from demoControllar after middlewire check';
+     }
+
+     public function middCheck2(){
+        return 'Hello  demoControllar 2';
+     }
+
+     public function middCheck3(){
+        return 'Hello  demoControllar 3';
+     }
+
+     public function middCheck4(){
+        return 'Hello  demoControllar 4';
+     }
+
 
 }

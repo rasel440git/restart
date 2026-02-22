@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->string('email',50)->unique();
-            $table->string('otp',4);
+            $table->string('name');
+            $table->string('mobile',40);
+            $table->string('mailingAddress',40);
+            $table->string('city',40);
+            $table->string('email',40)->unique();
+                $table->foreign('email')->references('email')->on('users')
+                ->restrictOnDelete()->cascadeOnUpdate();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('profiles');
     }
 };

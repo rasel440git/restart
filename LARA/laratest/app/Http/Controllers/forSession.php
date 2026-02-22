@@ -30,4 +30,9 @@ class forSession extends Controller
         log::info( $countries);
         return response()->json($countries);
     }
+
+    public function getdata(Request $request){
+        $data= $request->header();
+        return response()->json($data);
+    }
 }
