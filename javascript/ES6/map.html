@@ -8,10 +8,17 @@
     myMap.set('age', 30);
     myMap.set('city', 'New York');
     myMap.set('Country', 'USA');
+    if(myMap.has('name') && myMap.get('name') === 'Alic'){
+        console.log('Yes, name is Alice in the map');
+
+    }else{
+        console.log('No, name is not Alice in the map');
+    }
 
     // Getting values from the Map
     // console.log('Name:', myMap.get('name'));
     // console.log('Age:', myMap.get('age'));
+
     // console.log('City:', myMap.get('city'));
 
     // Checking the size of the Map

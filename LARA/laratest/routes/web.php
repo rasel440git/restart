@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\demoControler;
+use App\Http\Controllers\qbController;
 use App\Http\Controllers\forSession;
 use App\Http\Controllers\siteController;
 use App\Http\Middleware\DemoMiddleware;
@@ -69,6 +70,16 @@ Route::get("hi4/{key}", [demoControler::class,'middCheck4']);
 });
 
 Route::get("hi2/", [demoControler::class,'middCheck2']);
-
-
 Route::get("getdata/", [forSession::class,'getdata'])->middleware('throttle:5,1');
+
+
+
+
+
+
+
+
+
+
+Route::get("qb/", [qbController::class,'demoAction']);
+
