@@ -17,13 +17,21 @@
           fullName() {
               return this.firstName + " " + this.lastName;
           }
+
+          address() {
+              return "Dhaka, Bangladesh";
+          }
       }
 
-      class son extends father {          
+      class son extends father {    
+        address() {
+              return "London, UK";
+          }      
           
       }
 
         let sonObj = new son();
         console.log("Son Full Name: " + sonObj.fullName());
+        console.log("Son Address: " + sonObj.address());
     </script>
 </html>
