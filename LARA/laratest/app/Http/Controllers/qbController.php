@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\brand;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,5 +51,38 @@ class qbController extends Controller
         return $insertData;
         //  return response()->json(['products' => $products, 'productsJoin' => $productsJoin]);
 
+    }
+
+    public function insertAction(Request $request){
+        // $data= $request->all();
+        // $insertData= DB::table('brands')->insert([
+        //     'brandName' => $data['brandName'],
+        //     'brandImg' => $data['brandImg'],
+        // ]);
+
+        // $insertData= DB::table('brands')->insert($request->all());
+
+        // return response()->json(['message' => 'Data inserted successfully', 'inserted' => $insertData], 201);
+    }
+
+    public function updateAction(Request $request, $id){
+        // $updateData= DB::table('brands')->where('id', $request->id)->update($request->input());
+
+        $updateData= DB::table('brands')
+        ->updateOrInsert(
+            ['brandName' => $request->brandName],
+            $request->input()
+            
+        );
+        
+
+        return response()->json(['message' => 'Data updated successfully', 'updated' => $updateData], 200);
+    }
+
+    public function upsertAction(Request $request, $brandName){
+        $insert= brand::create($request->input());
+        
+
+        return response()->json(['message' => 'Data insert successfully', 'upserted' => $insert], 200);
     }
 }

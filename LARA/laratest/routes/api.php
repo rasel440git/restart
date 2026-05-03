@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\demoControler;
+use App\Http\Controllers\qbController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,12 @@ Route::get("student/{loction}/{bGroup}", [demoControler::class,'reqFunction']);
 Route::post("student/", [demoControler::class,'reqFunction']);
 Route::post("upload/", [demoControler::class,'fileUpload']);
 Route::match(['get','post'],"cook/", [demoControler::class,'cookeReq']);
+
+Route::post("insert/{id}", [qbController::class,'insertAction']);
+Route::put("update/{id}", [qbController::class,'updateAction']);
+Route::post("upsert/{brandName}", [qbController::class,'updateAction']);
+Route::post("create-data", [qbController::class,'upsertAction']);
+
+
+
 

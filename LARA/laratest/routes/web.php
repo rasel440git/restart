@@ -83,3 +83,4 @@ Route::get("getdata/", [forSession::class,'getdata'])->middleware('throttle:5,1'
 
 Route::get("qb/", [qbController::class,'demoAction']);
 
+
