@@ -68,21 +68,31 @@ class qbController extends Controller
     public function updateAction(Request $request, $id){
         // $updateData= DB::table('brands')->where('id', $request->id)->update($request->input());
 
-        $updateData= DB::table('brands')
-        ->updateOrInsert(
-            ['brandName' => $request->brandName],
-            $request->input()
+        // $updateData= DB::table('brands')
+        // ->updateOrInsert(
+        //     ['brandName' => $request->brandName],
+        //     $request->input()
             
-        );
+        // );
         
 
-        return response()->json(['message' => 'Data updated successfully', 'updated' => $updateData], 200);
+        // return response()->json(['message' => 'Data updated successfully', 'updated' => $updateData], 200);
     }
 
-    public function upsertAction(Request $request, $brandName){
+    public function upsertAction(Request $request){
         $insert= brand::create($request->input());
         
 
         return response()->json(['message' => 'Data insert successfully', 'upserted' => $insert], 200);
+    }
+
+    public function ormPractice(){
+        // $data= brand::all();
+        // $data= brand::where('id', 1)->first();
+        // $data= brand::where('id', 1)->get();
+        // $data= brand::where('brandName', 'Pepsico')->first();
+        $data= brand::orderBy('brandName', 'desc')->get(); 
+
+        return response()->json(['data' => $data], 200);
     }
 }
